@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     var currentValue: Int = 50
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    var score = 0
+    var round = 0
     
     var targetValue: Int = 0
     override func viewDidLoad() {
@@ -30,6 +34,7 @@ class ViewController: UIViewController {
     }
     
     func startNewRound() {
+        round+=1
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
@@ -38,15 +43,32 @@ class ViewController: UIViewController {
     
     func updateLabels () {
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
     
     @IBAction func showAlert() {
-        var difference : Int
-        difference = abs(currentValue - targetValue)
-        let message = "The value of the slider is: \(currentValue)" +
-         "\nThe target value is \(targetValue)" +
-          "\nThe difference is \(difference)"
-        let alert  = UIAlertController(title: "Hello", message: message, preferredStyle: .alert)
+        let difference : Int = abs(currentValue - targetValue)
+        var points = 100 - difference
+        
+        let title: String
+        if difference == 0 {
+            title = "Perfect"
+            points += 100
+        } else if difference < 5 {
+             title = "You almost had it!"
+            if difference == 1 {
+                points += 50
+            }
+        } else if difference < 10 {
+            title = "Pretty good!"
+        } else {
+            title = "Not even close..."
+        }
+        
+        score += points
+        let message = "You score \(points)"
+        let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome" , style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)

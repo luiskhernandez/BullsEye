@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var targetValue: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +47,12 @@ class ViewController: UIViewController {
         roundLabel.text = String(round)
     }
     
+    @IBAction func startNewGame () {
+        score = 0
+        round = 0
+        startNewRound()
+    }
+    
     @IBAction func showAlert() {
         let difference : Int = abs(currentValue - targetValue)
         var points = 100 - difference
@@ -69,10 +75,12 @@ class ViewController: UIViewController {
         score += points
         let message = "You score \(points)"
         let alert  = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Awesome" , style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome" , style: .default, handler: {
+            action in
+              self.startNewRound()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        startNewRound()
     }
     
 }

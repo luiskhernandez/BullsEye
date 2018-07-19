@@ -14,6 +14,7 @@
 		0086D23020F9047D004FB2B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0086D22E20F9047D004FB2B9 /* LaunchScreen.storyboard */; };
 		0086D23820FD0668004FB2B9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086D23720FD0668004FB2B9 /* AboutViewController.swift */; };
 		0086D23A20FD2769004FB2B9 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086D23920FD2769004FB2B9 /* AboutMeViewController.swift */; };
+		0086D23C2100D5C9004FB2B9 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 0086D23B2100D5C9004FB2B9 /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0086D23120F9047D004FB2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0086D23720FD0668004FB2B9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0086D23920FD2769004FB2B9 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		0086D23B2100D5C9004FB2B9 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		0086D22420F9047C004FB2B9 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				0086D23B2100D5C9004FB2B9 /* BullsEye.html */,
 				0086D22520F9047D004FB2B9 /* AppDelegate.swift */,
 				0086D22720F9047D004FB2B9 /* ViewController.swift */,
 				0086D23720FD0668004FB2B9 /* AboutViewController.swift */,
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0086D23020F9047D004FB2B9 /* LaunchScreen.storyboard in Resources */,
+				0086D23C2100D5C9004FB2B9 /* BullsEye.html in Resources */,
 				0086D22D20F9047D004FB2B9 /* Assets.xcassets in Resources */,
 				0086D22B20F9047D004FB2B9 /* Main.storyboard in Resources */,
 			);

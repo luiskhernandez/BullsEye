@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    
     var score = 0
     var round = 0
     
@@ -22,6 +23,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewGame()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighligted = UIImage(named: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighligted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        let trackLeftImage  = UIImage(named: "SliderTrackLeft")
+        let trackLeftResizable = trackLeftImage?.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        
+        let trackRightImage  = UIImage(named: "SliderTrackRight")
+        let trackRightResizable = trackRightImage?.resizableImage(withCapInsets: insets)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+
     }
 
     override func didReceiveMemoryWarning() {
